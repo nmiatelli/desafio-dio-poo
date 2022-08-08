@@ -1,4 +1,6 @@
+import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
+import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.time.LocalDate;
@@ -22,11 +24,44 @@ public class Main {
         mentoria1.setData(LocalDate.now());
 
 
+        /*
         System.out.println(curso1);
         System.out.println(" ");
         System.out.println(curso2);
         System.out.println(" ");
-        System.out.println(mentoria1);
+        System.out.println(mentoria1)
+        */
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Natalia M.");
+        bootcamp.setDescricao("BootCamp Santander Code Girls.");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria1);
+
+        Dev devNatalia = new Dev();
+        devNatalia.setNome("Natalia");
+        devNatalia.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Natalia: " + devNatalia.getConteudosInscritos());
+        devNatalia.progredir();
+        devNatalia.progredir();
+        devNatalia.progredir();
+        System.out.println("---");
+        System.out.println("Conteudos Inscritos Natalia: " + devNatalia.getConteudosInscritos());
+        System.out.println("Conteudos Concluidos Natalia: " + devNatalia.getConteudosConcluidos());
+        System.out.println("XP: " + devNatalia.calcularTotalXp());
+
+        System.out.println("--------------------------------");
+
+        Dev devAmanda = new Dev();
+        devAmanda.setNome("Amanda");
+        devAmanda.inscreverBootcamp(bootcamp);
+        System.out.println("Conteudos Inscritos Amanda: " + devAmanda.getConteudosInscritos());
+        devAmanda.progredir();
+        System.out.println("---");
+        System.out.println("Conteudos Inscritos Amanda: " + devAmanda.getConteudosInscritos());
+        System.out.println("Conteudos Concluidos Amanda: " + devAmanda.getConteudosConcluidos());
+        System.out.println("XP: " + devAmanda.calcularTotalXp());
 
 
     }
